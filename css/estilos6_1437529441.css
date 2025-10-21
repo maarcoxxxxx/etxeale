@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@100;300;400;700&display=swap');
+body{ overflow-x: hidden;}
+
+* { font-family: 'Montserrat', sans-serif; }
+h1, .h1, .caveat{ font-family: 'Caveat', cursive; }
+
+.bloque-textura{ background-image: url(../images/6/textura.jpg); background-position: center center;}
+.bottom{ background-color:#FFF;}
+
+/* NOTA: Altura de .carousel-item ahora controlada por estilos-mejorados.css */
+.top{ height:800px; width: 100%; background-position:center center; background-size: cover; }
+
+#fotosvideos{ margin-top:10px;}
+#fotosvideos img{ margin-right:10px; width: 150px; height: 84px; }
+
+.fs-0-5{ font-size: 3.5rem!important;}
+
+.menu{ 
+    text-align: center; 
+    padding: 10px 0 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+.menu a{ text-decoration: none; color: #888; display: inline-block; width:auto; padding:0 16px; text-align: center; box-sizing: border-box; text-transform: uppercase; border-right:1px solid #DDD;}
+.menu a:last-child{ border-right:none;}
+
+.mmmenu a{ text-decoration:none; font-size: 16px; padding:7px 18px; margin: 0 10px; text-align: center; display: inline-block; border-radius: 6px;}
+
+.tarifas table{ width:100%; border-spacing: 0px; border-collapse: collapse; margin-bottom:30px;}
+.tarifas table th{ padding:3px 10px 10px 0; font-weight: bold; text-align: center;}
+.tarifas table td{ padding:3px 10px 3px 0; text-align: center;}
+.tarifas table td.t{ text-align: left;}
+/*
+.nombrecasa{ font-size:calc(2.5rem + 1.5vw)!important; text-shadow: 0 0 10px #000; }
+*/
+
+@media screen and (max-width:1200px){
+	.fs-0-5{ font-size: calc(1.8rem + 1.5vw)!important; }
+	.top{ height:700px; }
+}
+
+@media screen and (max-width:992px){
+	.top{ height:600px; }
+}
+
+@media screen and (max-width:768px){
+	.bottom{ padding-bottom: 100px;}
+	
+	.top{ height:300px; }
+	
+	.contactover{ position: fixed; z-index: 50; bottom: 0px; width:100%; background-color:#FFF; border-top: 1px solid #DDD; }
+
+	#fotosvideos{ margin-top:5px;}
+	#fotosvideos img{ margin-right:2%; width: 31.3%; height: 65px; }
+	
+	.fs-0-5{ font-size: calc(2.8rem + 1.5vw)!important; }
+	
+	.iconobox{ width:45%;}
+	
+	.menu{ text-align: center; padding: 5px 0;}
+	.menu a{ border-right:none; font-size: 12px; padding:8px 3px; }
+	.menu a span{font-family: system-ui;}
+	
+	.mmmenucontainer{ background-image: url(../images/6/textura.jpg); background-position: center center; background-size: cover;}
+	.mmmenu a{ font-size: 14px; padding:6px 12px; margin: 0 5px;}
+	
+/*
+    .menu{ text-align: center; background-color:#232323; padding: 15px 5px; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly; align-items: stretch; align-items:center; z-index:991;}
+    .menu a{ padding: 0 10px; color: #EEE;}
+    .menu a span{ text-align: center; margin-top:0; font-size:12px;}
+	
+	.topbuttons{ z-index: 990 !important;}
+	.topbuttons a{ display:inline-block; width:40px; height:40px; margin-left: 10px; text-decoration:none; color:#FFF; font-size: 18px; text-align:center; line-height: 40px; border-radius: 50%;}
+	.topbuttons a.tel{ background-color:#686868;}
+	.topbuttons a.wha{ background-color:#229800; font-size: 22px; }*/
+}

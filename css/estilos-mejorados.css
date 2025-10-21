@@ -1,0 +1,322 @@
+/* ===================================================
+   ESTILOS MEJORADOS PARA PENSIÓN ETXEALE
+   Diseño profesional para casa rural
+   Paleta de colores: Tierra, Verde Natural, Beige
+   =================================================== */
+
+:root {
+    /* Colores principales - Casa Rural Natural */
+    --color-primary: #5a7358;        /* Verde bosque */
+    --color-primary-dark: #3d5a3b;   /* Verde oscuro */
+    --color-primary-light: #7a9278;  /* Verde claro */
+    
+    --color-secondary: #8d6e3a;      /* Marrón tierra */
+    --color-secondary-dark: #6b5228; /* Marrón oscuro */
+    --color-secondary-light: #b8965d;/* Marrón claro */
+    
+    --color-accent: #c89b5f;         /* Dorado cálido */
+    --color-accent-hover: #d4a96f;   /* Dorado claro */
+    
+    --color-neutral-light: #f5f3ed;  /* Beige muy claro */
+    --color-neutral: #e8e4d9;        /* Beige */
+    --color-neutral-dark: #4a4a4a;   /* Gris carbón */
+    
+    --color-white: #ffffff;
+    --color-black: #1a1a1a;
+}
+
+/* ===================================================
+   FIX PARA PESTAÑAS - FORZAR VISIBILIDAD
+   =================================================== */
+
+.tab-content > .tab-pane {
+    display: none !important;
+}
+
+.tab-content > .tab-pane.active {
+    display: block !important;
+}
+
+.tab-content > .tab-pane.show {
+    display: block !important;
+}
+
+.tab-content > .tab-pane.active.show {
+    display: block !important;
+}
+
+#fotosdiv.active,
+#vvdiv.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ===================================================
+   CARRUSEL PRINCIPAL - DISEÑO PREMIUM
+   =================================================== */
+
+#topgal.carousel {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay oscuro sobre las imágenes para mejor legibilidad */
+#topgal .carousel-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+#topgal .carousel-inner {
+    height: 100%;
+}
+
+#topgal .carousel-item {
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Efecto zoom suave en las imágenes */
+#topgal .carousel-item.active {
+    animation: subtleZoom 8s ease-in-out infinite alternate;
+}
+
+@keyframes subtleZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* ===================================================
+   INDICADORES DEL CARRUSEL - DISEÑO ELEGANTE
+   =================================================== */
+
+#topgal .carousel-indicators {
+    bottom: 30px;
+    z-index: 2;
+    margin-bottom: 0;
+    gap: 10px;
+}
+
+#topgal .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid var(--color-white);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#topgal .carousel-indicators li:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+#topgal .carousel-indicators li.active {
+    width: 40px;
+    border-radius: 6px;
+    background-color: var(--color-white);
+    opacity: 1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================================================
+   CONTROLES DEL CARRUSEL - FLECHAS MODERNAS
+   =================================================== */
+
+#topgal .carousel-control-prev,
+#topgal .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(90, 115, 88, 0.85);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#topgal .carousel-control-prev {
+    left: 30px;
+}
+
+#topgal .carousel-control-next {
+    right: 30px;
+}
+
+#topgal:hover .carousel-control-prev,
+#topgal:hover .carousel-control-next {
+    opacity: 1;
+}
+
+#topgal .carousel-control-prev:hover,
+#topgal .carousel-control-next:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-50%) scale(1.1);
+    border-color: var(--color-white);
+}
+
+#topgal .carousel-control-prev-icon,
+#topgal .carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* ===================================================
+   OVERLAY CON INFORMACIÓN - OPCIONAL
+   =================================================== */
+
+#topgal .carousel-caption {
+    bottom: 80px;
+    z-index: 2;
+    background: linear-gradient(
+        to top,
+        rgba(90, 115, 88, 0.9) 0%,
+        rgba(90, 115, 88, 0.7) 50%,
+        transparent 100%
+    );
+    left: 0;
+    right: 0;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+#topgal .carousel-caption h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+}
+
+#topgal .carousel-caption p {
+    font-size: 1.2rem;
+    color: var(--color-neutral-light);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===================================================
+   RESPONSIVE - MÓVILES Y TABLETS
+   =================================================== */
+
+@media (max-width: 992px) {
+    #topgal.carousel {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    #topgal .carousel-control-prev,
+    #topgal .carousel-control-next {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #topgal .carousel-control-prev {
+        left: 15px;
+    }
+    
+    #topgal .carousel-control-next {
+        right: 15px;
+    }
+    
+    #topgal .carousel-caption h3 {
+        font-size: 2rem;
+    }
+    
+    #topgal .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #topgal.carousel {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    #topgal .carousel-indicators li {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+    
+    #topgal .carousel-indicators li.active {
+        width: 24px;
+    }
+    
+    #topgal .carousel-control-prev,
+    #topgal .carousel-control-next {
+        opacity: 0.7;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #topgal .carousel-caption {
+        bottom: 60px;
+        padding: 30px 15px 15px;
+    }
+    
+    #topgal .carousel-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    #topgal .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===================================================
+   LOADING STATE
+   =================================================== */
+
+#topgal .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-neutral);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+#topgal .carousel-item:not(.active)::before {
+    opacity: 1;
+}
